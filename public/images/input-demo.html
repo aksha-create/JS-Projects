@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script src="/src/scripts/input-demo.js"></script>
+  </head>
+  <body class="container-fluid">
+    <div id="registerContainer">
+        <h2>JS Form Input</h2>
+    <button
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#register"
+      onClick="RegisterClick()"
+    >
+      Register
+    </button>
+    </div>
+    <div class="modal" id="register">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3><span class="bi bi-cart4"></span>Register Product</h3>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <dl>
+              <dt>Product Name</dt>
+              <dd><input type="text" class="form-control" id="Name" /></dd>
+              <dt>Price</dt>
+              <dd><input type="number" class="form-control" id="Price" /></dd>
+              <dt>City</dt>
+              <dd>
+                <select class="form-select" id="City">
+                  <option>Delhi</option>
+                  <option>Hyderabad</option>
+                  <option>Mumbai</option>
+                </select>
+              </dd>
+              <dt>Stock</dt>
+              <dd class="form-switch">
+                <input type="checkbox" class="form-check-input" id="Stock" />Available
+              </dd>
+              <dt>Manufactured</dt>
+              <dd><input type="date" class="form-control" id="manufactured" /></dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-dismiss="modal" id="btnModalRegister">Register</button>
+            <button class="btn btn-danger" data-bs-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="detailsContainer" style="display:none">
+        <dl class="row">
+            <dt class="col-4">Name</dt>
+            <dd class="col-8" id="lblName"></dd>
+            <dt class="col-4">Price</dt>
+            <dd class="col-8" id="lblPrice"></dd>
+            <dt class="col-4">City</dt>
+            <dd class="col-8" id="lblCity"></dd>
+            <dt class="col-4">Stock</dt>
+            <dd class="col-8" id="lblStock"></dd>
+            <dt class="col-4">Manufactured</dt>
+            <dd class="col-8" id="lblMfd"></dd>
+            <button class="btn btn-warning" onClick="EditClick()">
+                <span class="bi bi-pen" data-bs-toggle="modal" data-bs-target="#register"></span> Edit
+            </button>
+    </div>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

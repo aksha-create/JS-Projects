@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMI Calculator</title>
+    <script src="/src/scripts/emi.js"></script>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      .box {
+        padding: 20px;
+        background-color: white;
+        box-shadow: 6px 2px 3px gray;
+      }
+    </style>
+  </head>
+  <body class="container-fluid">
+    <div class="box">
+      <h1>Personal EMI Calculator</h1>
+      <div class="row">
+        <div class="col">
+          Amount you need &#8377; <input type="text" size:"10" id="txtAmount"
+          onchange="AmtTextBoxChanged()">
+        </div>
+        <div class="col">
+          for <input type="text" size:"2" id="txtYears"
+          onchange="YearsTxtBoxChanged()">
+        </div>
+        <div class="col">
+          interest rate <input type="text" size:"2" id="txtRate"
+          onchange="RateTxtBoxChanged()">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          <div class="d-flex">
+            <span>&#8377; 50000</span>
+            <input
+              type="range"
+              class="form-range"
+              min="50000"
+              max="1000000"
+              step="1000"
+              value="50000"
+              id="rangeAmt"
+              style="width: 150px"
+              onchange="RangeAmtChanged()"
+            />
+            <span>&#8377; 1000000</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex">
+            <span>1</span>
+            <input
+              style="width: 150px"
+              type="range"
+              class="form-range"
+              min="1"
+              max="30"
+              step="1"
+              value="1"
+              id="rangeYears"
+              onchange="RangeYearsChanged()"
+            />
+            <span>30</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex">
+            <span>10.25%</span>
+            <input
+              style="width: 150px"
+              type="range"
+              class="form-range"
+              min="10.25"
+              max="18.45"
+              value="10.25"
+              step="0.1"
+              id="rangeRate"
+              onchange="RangeRateChanged()"
+            />
+            <span>18.45%</span>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <button class="btn btn-primary" onClick="CalculateEMI()">
+            Calculate EMI
+          </button>
+        </div>
+      </div>
+    </div>
+    <p id="result" style="font-size: 30px" class="mt-4 text-center"></p>
+  </body>
+</html>
